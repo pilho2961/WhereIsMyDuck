@@ -16,8 +16,14 @@ public class FloatableObject : MonoBehaviour
 	Vector3 tempPos = new Vector3();
 	Vector3 moveDir = new Vector3();
 
+	Rigidbody rb;
 
-	void Start()
+    private void Awake()
+    {
+        rb = GetComponentInChildren<Rigidbody>();
+    }
+
+    void Start()
 	{
 		waterSurface = GameObject.Find("Water").GetComponent<Transform>();
 
