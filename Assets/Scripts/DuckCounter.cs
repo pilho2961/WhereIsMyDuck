@@ -6,6 +6,7 @@ public class DuckCounter : MonoBehaviour
 {
 	private DuckContainer duckInContainer;
 	public int[] counters;
+	public int allDucksInPool;
 
 	private void Awake()
 	{
@@ -24,6 +25,7 @@ public class DuckCounter : MonoBehaviour
 
 	public void CountDucksInPool(int kindOfDuck)
 	{
+		allDucksInPool++;
 		counters[kindOfDuck]++;
 	}
 

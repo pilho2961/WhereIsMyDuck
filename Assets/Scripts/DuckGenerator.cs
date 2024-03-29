@@ -29,6 +29,7 @@ public class DuckGenerator : MonoBehaviour
 		}
 
 		StartCoroutine(GenerateCycle());
+		StartCoroutine(GeneratorContorller());
 	}
 
 	IEnumerator GenerateCycle()
@@ -50,5 +51,23 @@ public class DuckGenerator : MonoBehaviour
 
 			yield return new WaitForSeconds(randomTimeToGen);
 		}
+	}
+
+	IEnumerator GeneratorContorller()
+	{
+        while (true)
+        {
+            if (duckCounter.allDucksInPool > 25)
+            {
+                stopCondition = true;
+            }
+			else if (stopCondition == true && duckCounter.allDucksInPool < 25)
+			{
+				stopCondition = false;
+				StartCoroutine(GenerateCycle());
+			}
+
+			yield return new WaitForSeconds(5);
+        }
 	}
 }
