@@ -3,14 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Duck : FloatableObject, IPointerClickHandler
+public class Duck : FloatableObject
 {
     public int duckId;
-
-	public void OnPointerClick(PointerEventData eventData)
-	{
-		
-	}
 
 	private void OnEnable()
 	{

@@ -5,8 +5,12 @@ using UnityEngine;
 public class DuckCounter : MonoBehaviour
 {
 	private DuckContainer duckInContainer;
-	public int[] counters;
-	public int allDucksInPool;
+    public int allDucksInPool;
+	public int totalCollectedDucks;
+
+    public int[] counters;
+	public int[] collectedDucks;
+
 
 	private void Awake()
 	{
@@ -16,6 +20,7 @@ public class DuckCounter : MonoBehaviour
 	private void Start()
 	{
 		counters = new int[duckInContainer.duckPrefabList.Length];
+		collectedDucks = new int[duckInContainer.duckPrefabList.Length + duckInContainer.specialDuckPrefabList.Length];
 
 		for (int i = 0; i < counters.Length; i++)
 		{
@@ -29,8 +34,12 @@ public class DuckCounter : MonoBehaviour
 		counters[kindOfDuck]++;
 	}
 
-	private void CountCollectedDucks(int kindOfDuck)
+	public void CountCollectedDucks(int duckId)
 	{
-		counters[kindOfDuck]--;
+		allDucksInPool--;
+        counters[duckId]--;
+
+        totalCollectedDucks++;
+		collectedDucks[duckId]++;
 	}
 }

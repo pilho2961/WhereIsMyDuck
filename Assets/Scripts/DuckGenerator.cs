@@ -22,8 +22,10 @@ public class DuckGenerator : MonoBehaviour
 		{
 			int randomKind = Random.Range(0, duckInContainer.duckPrefabList.Length);
 
-			Instantiate(duckInContainer.duckPrefabList[randomKind], 
+			GameObject duck = Instantiate(duckInContainer.duckPrefabList[randomKind], 
 				transform.position + (Random.insideUnitSphere * 5), Quaternion.identity, transform.parent);
+
+			duck.GetComponent<Duck>().duckId = randomKind;
 
 			duckCounter.CountDucksInPool(randomKind);
 		}
@@ -43,10 +45,12 @@ public class DuckGenerator : MonoBehaviour
 			{
 				int randomKind = Random.Range(0, duckInContainer.duckPrefabList.Length);
 
-				Instantiate(duckInContainer.duckPrefabList[randomKind],
+                GameObject duck = Instantiate(duckInContainer.duckPrefabList[randomKind],
 					transform.position + (Random.insideUnitSphere * 5), Quaternion.identity, transform.parent);
 
-				duckCounter.CountDucksInPool(randomKind);
+                duck.GetComponent<Duck>().duckId = randomKind;
+
+                duckCounter.CountDucksInPool(randomKind);
 			}
 
 			yield return new WaitForSeconds(randomTimeToGen);
