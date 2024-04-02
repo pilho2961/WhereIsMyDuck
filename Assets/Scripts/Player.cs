@@ -25,7 +25,6 @@ public class Player : MonoBehaviour
 
     private void Click()
     {
-        // Check for left mouse button click
         if (Input.GetMouseButtonDown(0))
         {
             // Cast a ray from the mouse position into the scene
@@ -38,10 +37,15 @@ public class Player : MonoBehaviour
                 // Check if the hit object has the "Duck" tag
                 if (hit.collider.CompareTag("Duck"))
                 {
+                    hit.collider.enabled = false;
                     hitObject = true;
                     duckCounter.CountCollectedDucks(hit.collider.gameObject.GetComponent<Duck>().duckId);
+
+                    AudioSource duckSound = hit.collider.gameObject.GetComponent<AudioSource>();
+
                     // Call a function to handle interaction with the Duck object
-                    Destroy(hit.collider.gameObject);
+                    Destroy(hit.collider.gameObject, duckSound.clip.length - 0.6f);
+                    if (!duckSound.isPlaying) duckSound.Play();
                 }
             }
             else if (!hitObject)
@@ -50,8 +54,6 @@ public class Player : MonoBehaviour
                 {
                     GameObject splash = Instantiate(waterSplash);
                     splash.transform.position = hit.point;
-
-                    print(1);
                 }
             }
 

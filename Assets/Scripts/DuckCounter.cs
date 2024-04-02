@@ -22,6 +22,8 @@ public class DuckCounter : MonoBehaviour
 		counters = new int[duckInContainer.duckPrefabList.Length];
 		collectedDucks = new int[duckInContainer.duckPrefabList.Length + duckInContainer.specialDuckPrefabList.Length];
 
+		AchievementManager.instance.kindsofDucks = new int[collectedDucks.Length];
+
 		for (int i = 0; i < counters.Length; i++)
 		{
 			counters[i] = 0;
@@ -41,5 +43,7 @@ public class DuckCounter : MonoBehaviour
 
         totalCollectedDucks++;
 		collectedDucks[duckId]++;
-	}
+
+        AchievementManager.instance.UpdateCollectedObjects(duckId);
+    }
 }
