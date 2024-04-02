@@ -6,8 +6,12 @@ public class Player : MonoBehaviour
 {
     public float interactionDistance = 10f; // Maximum distance for raycasting
     public LayerMask duckLayer; // LayerMask for the Duck objects
+    public LayerMask waterLayer;
 
     private DuckCounter duckCounter;
+
+    [SerializeField] private GameObject waterSplash;
+    [SerializeField] private bool hitObject = false;
 
     private void Start()
     {
@@ -16,10 +20,10 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        CollectDuck();
+        Click();
     }
 
-    private void CollectDuck()
+    private void Click()
     {
         // Check for left mouse button click
         if (Input.GetMouseButtonDown(0))
@@ -34,11 +38,24 @@ public class Player : MonoBehaviour
                 // Check if the hit object has the "Duck" tag
                 if (hit.collider.CompareTag("Duck"))
                 {
+                    hitObject = true;
                     duckCounter.CountCollectedDucks(hit.collider.gameObject.GetComponent<Duck>().duckId);
                     // Call a function to handle interaction with the Duck object
                     Destroy(hit.collider.gameObject);
                 }
             }
+            else if (!hitObject)
+            {
+                if (Physics.Raycast(ray, out hit, interactionDistance, waterLayer))
+                {
+                    GameObject splash = Instantiate(waterSplash);
+                    splash.transform.position = hit.point;
+
+                    print(1);
+                }
+            }
+
+            hitObject = false;
         }
     }
 }

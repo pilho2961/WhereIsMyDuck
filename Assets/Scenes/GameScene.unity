@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 199140955}
   - component: {fileID: 199140954}
   - component: {fileID: 199140953}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -520,6 +520,11 @@ MonoBehaviour:
   duckLayer:
     serializedVersion: 2
     m_Bits: 64
+  waterLayer:
+    serializedVersion: 2
+    m_Bits: 16
+  waterSplash: {fileID: 4201530006022500010, guid: 9fbb9f4f7e43ec247bac4df6783e445e, type: 3}
+  hitObject: 0
 --- !u!1 &357784342
 GameObject:
   m_ObjectHideFlags: 0
