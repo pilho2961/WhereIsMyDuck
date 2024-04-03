@@ -18,15 +18,22 @@ public class AchievementManager : MonoBehaviour
     [SerializeField] private int[] duckCounts;
     public int[] kindsofDucks;
 
+    private AchievementPanel panel;
+
     void Start()
     {
         duckCounts = new int[achievements.Length];
+        panel = GameObject.Find("AchievementPanel").GetComponent<AchievementPanel>();
         InitializeAchievements();
     }
 
     private void Update()
     {
-        if (!specials[1].isUnlocked)
+        if (specials[2].isUnlocked || specials[0].isUnlocked)
+        {
+            return;
+        }
+        else
         {
             CheckNonOwnedAchievement();
         }
@@ -45,7 +52,9 @@ public class AchievementManager : MonoBehaviour
         duckCounts[duckId]++;
         kindsofDucks[duckId]++;
         CheckAchievements();
+        CheckMyFirstDuckAchievement();
         CheckRainbowAchievement();
+
     }
 
     void CheckAchievements()
@@ -60,18 +69,13 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
-    void CheckRainbowAchievement()
+    void CheckMyFirstDuckAchievement()
     {
         if (!specials[0].isUnlocked)
         {
             foreach (int count in kindsofDucks)
             {
-                if (count < 1)
-                {
-                    specials[0].satisfied = false;
-                    return;
-                }
-                else
+                if (count > 0)
                 {
                     specials[0].satisfied = true;
                 }
@@ -85,13 +89,13 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
-    void CheckNonOwnedAchievement()
+    void CheckRainbowAchievement()
     {
-        if (Time.time > 5)
+        if (!specials[1].isUnlocked)
         {
             foreach (int count in kindsofDucks)
             {
-                if (count > 0)
+                if (count < 1)
                 {
                     specials[1].satisfied = false;
                     return;
@@ -110,16 +114,43 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
-    void DisplayAchievementPopUp(Achievement achievement)
+    void CheckNonOwnedAchievement()
     {
-        Debug.Log("Achievement Unlocked: " + achievement.name);
-        // Implement pop-up UI display logic here
+        if (Time.time > 5)
+        {
+            foreach (int count in kindsofDucks)
+            {
+                if (count > 0)
+                {
+                    specials[2].satisfied = false;
+                    return;
+                }
+                else
+                {
+                    specials[2].satisfied = true;
+                }
+            }
+
+            if (specials[2].satisfied)
+            {
+                specials[2].Unlock();
+                DisplaySpecialAchievementPopUp(specials[2]);
+            }
+        }
     }
 
-    void DisplaySpecialAchievementPopUp(SpecialAchievement achievement)
+    private void DisplayAchievementPopUp(Achievement achievement)
     {
         Debug.Log("Achievement Unlocked: " + achievement.name);
         // Implement pop-up UI display logic here
+        panel.PopupAchievement(achievement.name);
+    }
+
+    private void DisplaySpecialAchievementPopUp(SpecialAchievement achievement)
+    {
+        Debug.Log("Achievement Unlocked: " + achievement.name);
+        // Implement pop-up UI display logic here
+        panel.PopupAchievement(achievement.name);
     }
 }
 

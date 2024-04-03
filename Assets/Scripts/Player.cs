@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Canvas myCollectionUI;
+
     public float interactionDistance = 10f; // Maximum distance for raycasting
     public LayerMask duckLayer; // LayerMask for the Duck objects
     public LayerMask waterLayer;
@@ -11,7 +13,7 @@ public class Player : MonoBehaviour
     private DuckCounter duckCounter;
 
     [SerializeField] private GameObject waterSplash;
-    [SerializeField] private bool hitObject = false;
+    private bool hitObject = false;
 
     private void Start()
     {
