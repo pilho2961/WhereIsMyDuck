@@ -22,7 +22,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Click();
+        // if문 안 조건에 옵션패널도 추가
+        if (!UIManager.Instance.playerInfoPanel.activeSelf)
+        {
+            Click();
+        }
+
+        PressTab();
+        PressESC();
     }
 
     private void Click()
@@ -60,6 +67,37 @@ public class Player : MonoBehaviour
             }
 
             hitObject = false;
+        }
+    }
+
+    private void PressTab()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (UIManager.Instance.playerInfoPanel.activeSelf)
+            {
+                UIManager.Instance.CloseInfoPanel();
+            }
+            else
+            {
+                UIManager.Instance.OpenInfoPanel();
+            }
+        }
+    }
+
+    private void PressESC()
+    {
+        // 옵션창 띄우기
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //if ()
+            //{
+                
+            //}
+            //else
+            //{
+                
+            //}
         }
     }
 }
