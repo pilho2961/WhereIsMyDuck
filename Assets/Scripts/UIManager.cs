@@ -23,7 +23,6 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        DontDestroyOnLoad(Instance);
     }
 
     private void Start()
@@ -157,5 +156,10 @@ public class UIManager : MonoBehaviour
         {
             currentPanelState = PanelState.None;
         }
+    }
+
+    public void ToTitleScene()
+    {
+        currentPanelState = PanelState.None;
     }
 }
