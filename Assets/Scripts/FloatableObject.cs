@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class FloatableObject : MonoBehaviour
 {
@@ -16,6 +17,16 @@ public class FloatableObject : MonoBehaviour
     Vector3 tempPos = new Vector3();
     Vector3 moveDir = new Vector3();
 
+    Rigidbody rb;
+
+    Coroutine dirCor;
+    Coroutine fixCor;
+
+    private void Awake()
+    {
+        rb = GetComponentInChildren<Rigidbody>();
+    }
+
     void Start()
     {
         waterSurface = GameObject.Find("Water").GetComponent<Transform>();
@@ -23,7 +34,8 @@ public class FloatableObject : MonoBehaviour
         posOffset = transform.position;
         posOffset.y = waterSurface.position.y;
 
-        StartCoroutine(SetMoveDirection());
+        dirCor = StartCoroutine(SetMoveDirection());
+        fixCor = StartCoroutine(FixDistortion());
     }
 
 
@@ -38,8 +50,8 @@ public class FloatableObject : MonoBehaviour
         tempPos = posOffset;
         tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * Frequency) * Bounciness;
 
-        tempPos.x += moveDir.x * moveSpeed * Time.deltaTime;
-        tempPos.z += moveDir.z * moveSpeed * Time.deltaTime;
+        posOffset.x += moveDir.x * moveSpeed * Time.deltaTime;
+        posOffset.z += moveDir.z * moveSpeed * Time.deltaTime;
 
         transform.position = tempPos;
     }
@@ -57,4 +69,31 @@ public class FloatableObject : MonoBehaviour
             yield return new WaitForSeconds(randSec);
 		}
 	}
+
+    protected IEnumerator FixDistortion()
+    {
+        while (gameObject.activeSelf)
+        {
+            if (rb.transform.localPosition != Vector3.zero)
+            {
+                Vector3 tempPos = rb.transform.position;
+                rb.transform.localPosition = Vector3.zero;
+                transform.position = tempPos;
+
+                posOffset = transform.position;
+                posOffset.y = waterSurface.position.y;
+            }
+            
+            yield return new WaitForSeconds(2);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (fixCor != null)
+        {
+            StopCoroutine(dirCor);
+            StopCoroutine(fixCor);
+        }
+    }
 }

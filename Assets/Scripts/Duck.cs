@@ -7,7 +7,7 @@ public class Duck : FloatableObject
 {
     public int duckId;
 
-	private void OnEnable()
+    private void OnEnable()
 	{
 		RotationSpeed = Random.Range(-12f, 12f);
 	}

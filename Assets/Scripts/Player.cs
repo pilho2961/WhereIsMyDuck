@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
                     AudioSource duckSound = hit.collider.gameObject.GetComponentInParent<AudioSource>();
 
                     // Call a function to handle interaction with the Duck object
-                    Destroy(hit.collider.gameObject, duckSound.clip.length - 0.6f);
+                    Destroy(hit.collider.transform.parent.gameObject, duckSound.clip.length - 0.6f);
                     if (!duckSound.isPlaying) duckSound.Play();
                 }
             }
