@@ -48,9 +48,9 @@ public class Player : MonoBehaviour
                 {
                     hit.collider.enabled = false;
                     hitObject = true;
-                    duckCounter.CountCollectedDucks(hit.collider.gameObject.GetComponent<Duck>().duckId);
+                    duckCounter.CountCollectedDucks(hit.collider.gameObject.GetComponentInParent<Duck>().duckId);
 
-                    AudioSource duckSound = hit.collider.gameObject.GetComponent<AudioSource>();
+                    AudioSource duckSound = hit.collider.gameObject.GetComponentInParent<AudioSource>();
 
                     // Call a function to handle interaction with the Duck object
                     Destroy(hit.collider.gameObject, duckSound.clip.length - 0.6f);

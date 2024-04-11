@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3654568431270960268}
   - component: {fileID: 3654568431272046352}
   - component: {fileID: 4705097109266601318}
-  m_Layer: 0
+  - component: {fileID: 7481862493027731812}
+  m_Layer: 6
   m_Name: RubberDuck_Yellow
   m_TagString: Duck
   m_Icon: {fileID: 0}
@@ -111,6 +112,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
+--- !u!135 &7481862493027731812
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3654568431274048140}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0, z: 0.8}
 --- !u!1001 &1625181101509028918
 PrefabInstance:
   m_ObjectHideFlags: 0

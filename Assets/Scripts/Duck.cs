@@ -11,4 +11,9 @@ public class Duck : FloatableObject
 	{
 		RotationSpeed = Random.Range(-12f, 12f);
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        print(collision.gameObject.name);
+    }
 }

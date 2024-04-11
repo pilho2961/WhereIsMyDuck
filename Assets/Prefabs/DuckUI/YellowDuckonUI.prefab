@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4048641140295413411}
   - component: {fileID: 7972445156004813552}
   - component: {fileID: 8022253430520270210}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RubberDuck_Yellow
   m_TagString: Duck
   m_Icon: {fileID: 0}

@@ -11,6 +11,8 @@ public class DuckCounter : MonoBehaviour
     public int[] counters;
 	public int[] collectedDucks;
 
+	public CollectionPage collection;
+
 
 	private void Awake()
 	{
@@ -45,5 +47,6 @@ public class DuckCounter : MonoBehaviour
 		collectedDucks[duckId]++;
 
         AchievementManager.instance.UpdateCollectedObjects(duckId);
+		collection.CreateCollectedDuck(duckId);
     }
 }

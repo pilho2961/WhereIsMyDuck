@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3416580673905702168}
   - component: {fileID: 6594899164951543103}
   - component: {fileID: 1652962067445600781}
-  - component: {fileID: 5246473098689229286}
+  - component: {fileID: 7043476087710700016}
+  - component: {fileID: 1587401802585501919}
   m_Layer: 6
   m_Name: RubberDuck_Purple
   m_TagString: Duck
@@ -84,7 +85,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &5246473098689229286
+--- !u!135 &7043476087710700016
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102417058284287483}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0, z: 0.8}
+--- !u!54 &1587401802585501919
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +143,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2020491267920495263}
   - component: {fileID: 6081181492377574604}
-  - component: {fileID: 256141927525959163}
   - component: {fileID: 1879559534687279842}
   m_Layer: 6
   m_Name: PurpleDuck
@@ -164,27 +185,6 @@ MonoBehaviour:
   minSec: 3
   maxSec: 12
   duckId: 0
---- !u!135 &256141927525959163
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5201247488289011486}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.8
-  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!82 &1879559534687279842
 AudioSource:
   m_ObjectHideFlags: 0

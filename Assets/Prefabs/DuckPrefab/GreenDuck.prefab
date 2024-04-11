@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3586443525532045007
+--- !u!1 &7815042760618340962
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3586443525531824219}
-  - component: {fileID: 3586443525533163835}
-  - component: {fileID: 3586443525534236687}
-  - component: {fileID: 2213690136410854996}
-  m_Layer: 0
-  m_Name: RubberDuck_Red
+  - component: {fileID: 7815042760618093190}
+  - component: {fileID: 7815042760617346114}
+  - component: {fileID: 7815042760616248186}
+  - component: {fileID: 7658583012034277369}
+  - component: {fileID: 5750321273066737449}
+  m_Layer: 6
+  m_Name: RubberDuck_GreenDark
   m_TagString: Duck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3586443525531824219
+--- !u!4 &7815042760618093190
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3586443525532045007}
+  m_GameObject: {fileID: 7815042760618340962}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5390646149094325156}
+  m_Father: {fileID: 8237657309215875276}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!33 &3586443525533163835
+--- !u!33 &7815042760617346114
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3586443525532045007}
-  m_Mesh: {fileID: 4300000, guid: e9b20f339e41d42409993f01aec5ac61, type: 3}
---- !u!23 &3586443525534236687
+  m_GameObject: {fileID: 7815042760618340962}
+  m_Mesh: {fileID: 4300000, guid: dfeed8661f2a0a6448eeced2f917c99d, type: 3}
+--- !u!23 &7815042760616248186
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3586443525532045007}
+  m_GameObject: {fileID: 7815042760618340962}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -84,13 +85,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &2213690136410854996
+--- !u!54 &7658583012034277369
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3586443525532045007}
+  m_GameObject: {fileID: 7815042760618340962}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -111,7 +112,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
---- !u!1001 &6252498245515622715
+--- !u!135 &5750321273066737449
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7815042760618340962}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0, z: 0.8}
+--- !u!1001 &7951162007105331795
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -161,7 +183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5201247488289011486, guid: 65db701d5a405db40b33d577b0499e05, type: 3}
       propertyPath: m_Name
-      value: RedDuck
+      value: GreenDuck
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -169,11 +191,11 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2020491267920495263, guid: 65db701d5a405db40b33d577b0499e05, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3586443525531824219}
+      addedObject: {fileID: 7815042760618093190}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65db701d5a405db40b33d577b0499e05, type: 3}
---- !u!4 &5390646149094325156 stripped
+--- !u!4 &8237657309215875276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2020491267920495263, guid: 65db701d5a405db40b33d577b0499e05, type: 3}
-  m_PrefabInstance: {fileID: 6252498245515622715}
+  m_PrefabInstance: {fileID: 7951162007105331795}
   m_PrefabAsset: {fileID: 0}
