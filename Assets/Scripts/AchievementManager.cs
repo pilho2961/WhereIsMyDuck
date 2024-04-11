@@ -19,6 +19,7 @@ public class AchievementManager : MonoBehaviour
     public int[] kindsofDucks;
 
     private AchievementPanel panel;
+    public AchievePage achievePage;
 
     void Start()
     {
@@ -64,6 +65,7 @@ public class AchievementManager : MonoBehaviour
             if (!achievements[i].isUnlocked && duckCounts[i] >= achievements[i].targetCount)
             {
                 achievements[i].Unlock();
+                achievePage.CreateContent(achievements[i].name, achievements[i].description);
                 DisplayAchievementPopUp(achievements[i]);
             }
         }
@@ -84,6 +86,7 @@ public class AchievementManager : MonoBehaviour
             if (specials[0].satisfied)
             {
                 specials[0].Unlock();
+                achievePage.CreateContent(specials[0].name, specials[0].description);
                 DisplaySpecialAchievementPopUp(specials[0]);
             }
         }
@@ -109,6 +112,7 @@ public class AchievementManager : MonoBehaviour
             if (specials[1].satisfied)
             {
                 specials[1].Unlock();
+                achievePage.CreateContent(specials[1].name, specials[1].description);
                 DisplaySpecialAchievementPopUp(specials[1]);
             }
         }
@@ -134,6 +138,7 @@ public class AchievementManager : MonoBehaviour
             if (specials[2].satisfied)
             {
                 specials[2].Unlock();
+                achievePage.CreateContent(specials[2].name, specials[2].description);
                 DisplaySpecialAchievementPopUp(specials[2]);
             }
         }
@@ -141,14 +146,14 @@ public class AchievementManager : MonoBehaviour
 
     private void DisplayAchievementPopUp(Achievement achievement)
     {
-        Debug.Log("Achievement Unlocked: " + achievement.name);
+        //Debug.Log("Achievement Unlocked: " + achievement.name);
         // Implement pop-up UI display logic here
         panel.PopupAchievement(achievement.name);
     }
 
     private void DisplaySpecialAchievementPopUp(SpecialAchievement achievement)
     {
-        Debug.Log("Achievement Unlocked: " + achievement.name);
+        //Debug.Log("Achievement Unlocked: " + achievement.name);
         // Implement pop-up UI display logic here
         panel.PopupAchievement(achievement.name);
     }
@@ -158,6 +163,7 @@ public class AchievementManager : MonoBehaviour
 public class Achievement
 {
     public string name;
+    public string description;
     public int targetCount;
     public bool isUnlocked;
 
@@ -177,6 +183,7 @@ public class Achievement
 public class SpecialAchievement
 {
     public string name;
+    public string description;
     public bool satisfied;
     public bool isUnlocked;
 

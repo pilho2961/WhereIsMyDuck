@@ -14,6 +14,16 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
+        if (!UIManager.Instance.playerInfoPanel.activeSelf &&
+            !UIManager.Instance.optionPanel.activeSelf &&
+            !UIManager.Instance.playGuidePanel.activeSelf)
+        {
+            CameraMove();
+        }
+    }
+
+    private void CameraMove()
+    {
         // Input for rotation (clockwise and counterclockwise)
         float rotateInput = Input.GetAxis("Horizontal");
 
