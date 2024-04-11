@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3416580673905702168}
   - component: {fileID: 6594899164951543103}
   - component: {fileID: 1652962067445600781}
-  - component: {fileID: 7043476087710700016}
-  - component: {fileID: 1587401802585501919}
+  - component: {fileID: 9192383671649391992}
+  - component: {fileID: 601390904472945371}
   m_Layer: 6
   m_Name: RubberDuck_Purple
   m_TagString: Duck
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7043476087710700016
+--- !u!135 &9192383671649391992
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,7 +106,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0.8}
---- !u!54 &1587401802585501919
+--- !u!54 &601390904472945371
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +118,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaTensor: {x: 0.5, y: 0.5, z: 0.5}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
@@ -131,8 +131,8 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 1
+  m_Constraints: 112
+  m_CollisionDetection: 2
 --- !u!1 &5201247488289011486
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
     public Transform poolCenter; // Reference to the pool's center
     private float rotationSpeed = 40f; // Speed of camera rotation
     private float zoomSpeed = 5f; // Speed of camera zoom
-    private float maxZoom = 13f; // Maximum zoom distance
+    private float maxZoom = 11.4f; // Maximum zoom distance
     private float minZoom = 5f; // Minimum zoom distance
     private float angle = 0f;
     private float targetZoomDistance = 10f;
