@@ -27,7 +27,7 @@ public class AchievePage : MonoBehaviour
     {
         GameObject content = Instantiate(contentPrefab, transform);
 
-        content.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = $"    {name}   | ";
+        content.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = $"{name}";
         content.transform.Find("Description").GetComponent<TextMeshProUGUI>().text = description;
     }
 }
