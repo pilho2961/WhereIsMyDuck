@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject waterSplash;
     private bool hitObject = false;
 
+    [SerializeField] private GameObject cursorImage;
+
     private void Start()
     {
         duckCounter = GameObject.Find("DuckCounter").GetComponent<DuckCounter>();
@@ -29,6 +31,11 @@ public class Player : MonoBehaviour
         {
             Click();
         }
+    }
+
+    private void FixedUpdate()
+    {
+        ShowCursorImage();
     }
 
     private void Click()
@@ -67,5 +74,13 @@ public class Player : MonoBehaviour
 
             hitObject = false;
         }
+    }
+
+    private void ShowCursorImage()
+    {
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = 0;
+
+        cursorImage.transform.position = mousePosition;
     }
 }
