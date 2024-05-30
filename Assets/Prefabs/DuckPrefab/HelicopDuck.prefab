@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4793040696462724486
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8401982126445222768}
+    m_Modifications:
+    - target: {fileID: 154052, guid: ed2b77dfb9ab3ba44a2e7f72cd768104, type: 3}
+      propertyPath: m_Name
+      value: RubberDuck_Orange
+      objectReference: {fileID: 0}
+    - target: {fileID: 475856, guid: ed2b77dfb9ab3ba44a2e7f72cd768104, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475856, guid: ed2b77dfb9ab3ba44a2e7f72cd768104, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475856, guid: ed2b77dfb9ab3ba44a2e7f72cd768104, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 475856, guid: ed2b77dfb9ab3ba44a2e7f72cd768104, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 475856, guid: ed2b77dfb9ab3ba44a2e7f72cd768104, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 475856, guid: ed2b77dfb9ab3ba44a2e7f72cd768104, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475856, guid: ed2b77dfb9ab3ba44a2e7f72cd768104, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475856, guid: ed2b77dfb9ab3ba44a2e7f72cd768104, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475856, guid: ed2b77dfb9ab3ba44a2e7f72cd768104, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475856, guid: ed2b77dfb9ab3ba44a2e7f72cd768104, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed2b77dfb9ab3ba44a2e7f72cd768104, type: 3}
+--- !u!4 &4793040696462380886 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 475856, guid: ed2b77dfb9ab3ba44a2e7f72cd768104, type: 3}
+  m_PrefabInstance: {fileID: 4793040696462724486}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7535626224238647791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50,10 +112,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5201247488289011486, guid: 65db701d5a405db40b33d577b0499e05, type: 3}
       propertyPath: m_Name
-      value: PurpleDuck
+      value: HelicopDuck
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5102417058284287483, guid: 65db701d5a405db40b33d577b0499e05, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2020491267920495263, guid: 65db701d5a405db40b33d577b0499e05, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4793040696462380886}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65db701d5a405db40b33d577b0499e05, type: 3}
+--- !u!4 &8401982126445222768 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2020491267920495263, guid: 65db701d5a405db40b33d577b0499e05, type: 3}
+  m_PrefabInstance: {fileID: 7535626224238647791}
+  m_PrefabAsset: {fileID: 0}
